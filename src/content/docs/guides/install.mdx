@@ -1,0 +1,81 @@
+---
+title: Installation Guide
+description: Install Flamewolf
+---
+import FlameAPI from "../../../FlameAPI.astro";
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+## From Source (recommended)
+
+Flamewolf is a experimental browser. As such, building it from source is recommended.
+
+### Requirements
+
+<Tabs>
+  <TabItem label="Linux" icon="linux">
+    You need the following before building Flamewolf:
+    - Python 3
+    - Mercurial or Git
+    - At least 4GiB RAM (8GiB recommended)
+    - At least 30GiB Free Disk Space
+  </TabItem>
+  <TabItem label="macOS" icon="apple">
+    You need the following before building Flamewolf:
+    - Homebrew
+    - XCode
+    - Mercurial or Git
+    - At least 4GiB RAM (8GiB recommended)
+    - At least 30GiB Free Disk Space
+  </TabItem>
+  <TabItem label="Windows" icon="seti:windows">
+    You need the following before building Flamewolf:
+    - Python 3
+    - Mercurial or Git
+    - At least 4GiB RAM (8GiB recommended)
+    - At least 30GiB Free Disk Space
+  </TabItem>
+</Tabs>
+
+### Getting the source code
+
+Flamewolf is distributed through *both* [Git](https://github.com/rustdevbtw/flamewolf) and [Mercurial](https://hg.sr.ht/~rajdeep/flamewolf)
+
+Tou get it:
+<Tabs>
+  <TabItem label="Git">
+    ```sh title="Cloning via Git"
+    git clone https://github.com/rustdevbtw/flamewolf
+    ```
+  </TabItem>
+  <TabItem label="Mercurial">
+    ```sh title="Cloning via Mercurial"
+    hg clone https://hg.sr.ht/~rajdeep/flamewolf
+    ```
+  </TabItem>
+</Tabs>
+
+### Building
+
+<Tabs>
+  <TabItem label="Linux" icon="linux">
+    ```sh title="Building on Linux"
+    ./mach build
+    ```
+  </TabItem>
+  <TabItem label="macOS" icon="apple">
+    ```sh title="Building on macOS"
+    ./mach build
+    ```
+  </TabItem>
+  <TabItem label="Windows" icon="seti:windows">
+    #### Note
+    On Windows, You'll need to first enable support for running external scripts:
+    ```ps1 title="Enabling External Scripts support"
+    Set-ExecutionPolicy RemoteSigned
+    ```
+    Then, run:
+    ```ps1 title="Building on Windows"
+    .\mach.ps1 build
+    ```
+  </TabItem>
+</Tabs>

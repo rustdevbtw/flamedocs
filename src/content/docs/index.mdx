@@ -1,0 +1,25 @@
+---
+title: Welcome to Flamewolf
+description: Get started building your docs site with Starlight.
+template: splash
+hero:
+  tagline: Flamewolf is a privacy-focused fork of Firefox, featuring several non-standard Web APIs.
+  image:
+    file: ../../assets/favicon.svg
+  actions:
+    - text: Get Started 
+      link: /guides/install/
+      icon: right-arrow
+      variant: primary
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+import FlameAPI from "../../FlameAPI.astro";
+
+## Hello, <FlameAPI api="whoami" def="Fellow Earthling"/>
+
+Flamewolf is a fork of Firefox created with the following goals in mind:
+
+- Defaults should be sensible, and user-centric.
+- Privacy should be opt-out, not opt-in.
+- Features shall *not* be sacrified in the process.

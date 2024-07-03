@@ -1,0 +1,13 @@
+---
+const props = Object.values(Astro.props);
+const api = props.shift();
+const def = props.shift();
+---
+<p class="flame-api-result">{def}</p>
+
+<script is:inline define:vars={{api, def, props}}>
+  const IS_FLAME = navigator.isFlame && navigator.isFlame();
+  var _val;
+  const val = IS_FLAME ? (_val = navigator[api](...props)) ? _val : def : def;
+  document.querySelector(".flame-api-result").outerHTML = val;
+</script>
