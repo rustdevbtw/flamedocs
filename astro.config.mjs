@@ -1,7 +1,7 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 
-import deno from '@astrojs/deno';
+import vercel from '@astrojs/vercel/serverless';
 import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
@@ -33,5 +33,5 @@ export default defineConfig({
     }]
   }), sitemap()],
   output: "server",
-  adapter: deno()
+  adapter: vercel()
 });
