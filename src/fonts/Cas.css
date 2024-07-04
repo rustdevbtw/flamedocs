@@ -1,8 +1,12 @@
-@font-face {
-  font-family: 'CaskaydiaCove NF SemiBold' !important;
+@font-family {
+  font-family: 'CaskaydiaCove NF SemiBold';
   /* Use a relative path to the local font file in `url()`. */
-  src: url('./Cas.ttf') format('truetype') !important;
+  src: url('./Cas.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
+}
+
+* {
+  font-family: 'CaskaydiaCove NF SemiBold' !important;
 }
