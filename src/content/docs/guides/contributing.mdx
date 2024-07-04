@@ -1,0 +1,78 @@
+---
+title: How to Contribute
+description: This guide outlines all the details you may need to know before Contributing to Flamewolf
+---
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+## Choose your VCS
+
+Before Contributing, you must choose a VCS. You have *both* Git and Mercurial as an option.  
+Both VCS are fully-supported, and have different ways of Contributing.
+
+## Clone
+
+The first obvious thing, is to clone the repo.
+<Tabs>
+  <TabItem label="Git">
+  :::note
+  If you plan to use GitHub, you should first [fork](https://github.com/rustdevbtw/flamewolf/fork) the repo, then clone it:
+
+  ```sh title="Clone forked repo"
+  git clone https://github.com/<your_username>/flamewolf
+  ```
+
+  :::
+
+  ```sh title="Cloning via Git"
+  git clone https://github.com/rustdevbtw/flamewolf
+  ```
+
+  </TabItem>
+  <TabItem label="Mercurial">
+  ```sh title="Cloning via Mercurial"
+  hg clone https://hg.sr.ht/~rajdeep/flamewolf
+  ```
+  </TabItem>
+</Tabs>
+
+## Making changes
+
+The next step is, of course, to make changes. To know how, refer to the [Firefox source docs](https://firefox-source-docs.mozilla.org).
+We will soon public our own source docs as well, to help with it.
+
+## Submitting patches
+
+This step depends highly on your VCS
+
+### Git
+
+<Tabs>
+    <TabItem label="via GitHub PR">
+      If you're using GitHub, the preferred option is GitHub Pull Request.
+      To do so, first push the the changes to your fork, and [create the PR](https://github.com/rustdevbtw/flamewolf/compare).
+      We'll soon review your changes, and if we feel that their inclusion is worth it, we'll pull them in.
+    </TabItem>
+    <TabItem label="via E-Mail PR">
+      If you're using some other provider that's not GitHub, you can mail to the [~rajdeep/flamewolf-devel](mailto:~rajdeep/flamewolf-devel@lists.sr.ht) in the following format:
+      ```txt title="Sub: PULL [<last commit SHA>] <patch title>"
+      Pull: <url>
+      VCS: git
+      ```
+    </TabItem>
+</Tabs>
+
+### Mercurial
+
+<Tabs>
+  <TabItem label="via E-Mail Patches">
+    If you're using Mercurial, then the preferred method is E-Mail Patches. You can mail your patches to [~rajdeep/flamewolf-devel](mailto:~rajdeep/flamewolf-devel@lists.sr.ht). To know how, refer to [`hg-send-mail`](https://man.sr.ht/hg.sr.ht/email.md).
+  </TabItem>
+  <TabItem label="via E-Mail PR">
+    The easiest method with Mercurial is to push your changes to another remote repo (that needs to be in Mercurial), and send a mail to [~rajdeep/flamewolf-devel](mailto:~rajdeep/flamewolf-devel@lists.sr.ht) in the following format:
+    ```txt title="Sub: PULL [<last commit rev>] <patch title>"
+    Pull: <url>
+    VCS: hg
+    ```
+  </TabItem>
+</Tabs>

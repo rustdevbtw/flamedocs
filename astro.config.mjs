@@ -16,21 +16,33 @@ export default defineConfig({
   editLink: {
     baseUrl: 'https://github.com/rustdevbtw/flamedocs/edit/master/',
   },
-    sidebar: [{
-      label: 'Guides',
-      items: [
-      // Each item here is one entry in the navigation menu.
+    sidebar: [
       {
-        label: 'Installation Guide',
-        link: '/guides/install/'
+        label: "Docs",
+        items: [
+          {
+            label: "Installation",
+            link: "/install"
+          },
+          {
+            label: "Privacy Explainer",
+            link: "/privacy"
+          }
+        ]
       },
-      
       {
-        label: 'Privacy Explainer',
-        link: '/guides/privacy/'
+        label: "Guides",
+        items: [
+          {
+            label: "How to Contribute",
+            link: "/guides/contributing"
+          }
+        ]
       }
-      ]
-    }]
+    ],
+    customCss: [
+      "./src/fonts/Cas.css"
+    ]
   }), sitemap()],
   output: "server",
   adapter: vercel()
