@@ -40,14 +40,8 @@ export default defineConfig({
         ]
       }
     ],
-    head: [
-      {
-        tag: "link",
-        attrs: {
-          rel: "stylesheet",
-          href: "/fonts/Cas.css"
-        }
-      }
+    customCss: [
+      "./src/fonts/Cas.css"
     ]
   }), sitemap()],
   output: "server",

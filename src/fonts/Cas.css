@@ -4,6 +4,6 @@
   src: url('/fonts/Cas.ttf') format('truetype');
 }
 
-* {
-  font-family: "CaskaydiaCove Nerd Font" !important;
+:root {
+  --sl-font: "CaskaydiaCove Nerd Font" !important;
 }
