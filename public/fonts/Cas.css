@@ -1,4 +1,4 @@
-@font-family {
+@font-face {
   font-family: 'CaskaydiaCove Nerd Font';
   /* Use a relative path to the local font file in `url()`. */
   src: url('/fonts/Cas.ttf') format('truetype');
