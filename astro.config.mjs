@@ -40,10 +40,15 @@ export default defineConfig({
         ]
       }
     ],
+    components: {
+      // Relative path to the custom component.
+      Head: './src/components/Head.astro',
+    },
     customCss: [
       "./src/fonts/Cas.css"
-    ]
+    ],
+    lastUpdated: true
   }), sitemap()],
-  output: "server",
+  output: "hybrid",
   adapter: vercel()
 });
