@@ -42,9 +42,10 @@ export default defineConfig({
     ],
     head: [
       {
-        tag: "style",
+        tag: "link",
         attrs: {
-          src: "/fonts/Cas.css"
+          rel: "stylesheet",
+          href: "/fonts/Cas.css"
         }
       }
     ]
