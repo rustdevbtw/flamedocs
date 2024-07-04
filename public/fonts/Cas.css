@@ -1,9 +1,9 @@
 @font-family {
-  font-family: 'CaskaydiaCove NF SemiBold';
+  font-family: 'CaskaydiaCove Nerd Font';
   /* Use a relative path to the local font file in `url()`. */
   src: url('/fonts/Cas.ttf') format('truetype');
 }
 
 * {
-  font-family: "CaskaydiaCove NF SemiBold" !important;
+  font-family: "CaskaydiaCove Nerd Font" !important;
 }
