@@ -1,10 +1,35 @@
 import fs from "fs/promises";
-import satori from "satori";
 import type { APIRoute } from "astro";
 import { getCollection } from 'astro:content'
-import { OGImageRoute } from 'astro-og-canvas'
 import { Resvg } from "@resvg/resvg-js"
-import { JSDOM } from "jsdom"
+
+
+function ev(str, i) {
+    return str
+      .replace(/%i<\{([^}]+)\}>/g, (_, e) => Function("i", `"use strict"; return (i${e})`)(i));
+}
+
+function splitString(str, max = 50, tmpl = '%s') {
+    const maxLen = max;
+    const words = str.split(' ');
+    let lines = [];
+    let currentLine = '';
+
+    words.forEach(word => {
+        if ((currentLine + word).length <= maxLen) {
+            currentLine += (currentLine.length ? ' ' : '') + word;
+        } else {
+            lines.push(currentLine);
+            currentLine = word;
+        }
+    });
+
+    if (currentLine.length) {
+        lines.push(currentLine);
+    }
+
+    return lines.map((l, i) => ev(tmpl, i).replaceAll("%s", l));
+}
 
 export const prerender = true;
 
@@ -16,12 +41,10 @@ const entries = await getCollection('docs')
 const pages = Object.fromEntries(entries.map(({ data, slug }) => [slug, { data }]))
 
 export const GET: APIRoute = async ({ props, params, request }) => {
-  let svg = await fs.readFile("./public/flame.svg");
-  svg = svg
-    .toString()
-    .replaceAll("&#60;doc title&#62;", props.title)
-    .replaceAll("&#60;doc desc&#62;", props.description);
-  console.log(svg);
+  let svg = (await fs.readFile("./public/flame.svg")).toString();
+  let descs = splitString(props.description, 48, `<tspan x="50%" y="%i<{*56+326}>" dominant-baseline="middle" text-anchor="middle">%s</tspan>`);
+  let titles = splitString(props.title, 32, `<tspan x="50%" y="%i<{*3+244.682}>" dominant-baseline="middle" text-anchor="middle">%s</tspan>`);
+  svg = svg.replaceAll(`<tspan x="50%" y="326" dominant-baseline="middle" text-anchor="middle">$desc</tspan>`, descs.join("")).replaceAll(`<tspan x="50%" y="244.682" dominant-baseline="middle" text-anchor="middle">$title</tspan>`, titles.join(""));
   const opts = {
     font: {
       fontFiles: ['./src/fonts/Cas.ttf'], // Load custom fonts.
