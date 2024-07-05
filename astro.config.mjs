@@ -3,6 +3,7 @@ import starlight from '@astrojs/starlight';
 
 import vercel from '@astrojs/vercel/serverless';
 import sitemap from "@astrojs/sitemap";
+import frappe from "@catppuccin/vscode/themes/frappe.json" with { type: "json" };
 
 // https://astro.build/config
 export default defineConfig({
@@ -47,7 +48,10 @@ export default defineConfig({
     customCss: [
       "./src/fonts/Cas.css"
     ],
-    lastUpdated: true
+    lastUpdated: true,
+    expressiveCode: {
+      themes: [frappe]
+    }
   }), sitemap()],
   output: "hybrid",
   adapter: vercel()
