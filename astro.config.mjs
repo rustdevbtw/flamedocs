@@ -19,7 +19,8 @@ export default defineConfig({
     },
     expressiveCode: {
       styleOverrides: {
-        codeFontFamily: "CaskaydiaCove Nerd Font"
+        codeFontFamily: "CaskaydiaCove Nerd Font",
+        uiFontFamily: "CaskaydiaCove Nerd Font"
       }
     },
     sidebar: [
