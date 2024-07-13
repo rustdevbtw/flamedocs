@@ -17,6 +17,11 @@ export default defineConfig({
     editLink: {
       baseUrl: 'https://github.com/rustdevbtw/flamedocs/edit/master/',
     },
+    expressiveCode: {
+      styleOverrides: {
+        codeFontFamily: "CaskaydiaCove Nerd Font"
+      }
+    },
     sidebar: [
       {
         label: "Docs",
