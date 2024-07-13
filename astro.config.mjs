@@ -14,9 +14,9 @@ export default defineConfig({
     social: {
       github: 'https://github.com/rustdevbtw/flamewolf'
     },
-  editLink: {
-    baseUrl: 'https://github.com/rustdevbtw/flamedocs/edit/master/',
-  },
+    editLink: {
+      baseUrl: 'https://github.com/rustdevbtw/flamedocs/edit/master/',
+    },
     sidebar: [
       {
         label: "Docs",
@@ -28,6 +28,10 @@ export default defineConfig({
           {
             label: "Privacy Explainer",
             link: "/privacy"
+          },
+          {
+            label: "Flamewolf APIs",
+            link: "/apis"
           }
         ]
       },
